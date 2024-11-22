@@ -1,0 +1,40 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+.loader {
+   width: 50px;
+   aspect-ratio: 1;
+   display: grid;
+   animation: l14 4s infinite;
+
+  &::before,
+  &::after {
+  content: "";
+    grid-area: 1/1;
+    border: 8px solid;
+    border-radius: 50%;
+    border-color: red red #0000 #0000;
+    mix-blend-mode: darken;
+    animation: l14 1s infinite linear;
+  }
+
+  &::after {
+    border-color: #0000 #0000 blue blue;
+    animation-direction: reverse;
+  }
+}
+
+   @keyframes l14{
+   100%{transform: rotate(1turn)}
+   }
+
+   .Titre1 {
+     color:#444;
+   }

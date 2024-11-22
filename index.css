@@ -28,13 +28,14 @@
   animation-direction: reverse;
 }
 
+.Titre1 {
+  color: #444;
+}
+
 @keyframes l14 {
   100% {
     transform: rotate(1turn);
   }
-}
-.Titre1 {
-  color: #444;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,3 +1,5 @@
+@import "_colors";
+
 * {
   list-style: none;
   text-decoration: none;
@@ -20,21 +22,23 @@
     grid-area: 1/1;
     border: 8px solid;
     border-radius: 50%;
-    border-color: red red #0000 #0000;
+    border-color: colors.$first-color colors.$first-color $second-color $second-color;
     mix-blend-mode: darken;
     animation: l14 1s infinite linear;
   }
 
   &::after {
-    border-color: #0000 #0000 blue blue;
-    animation-direction: reverse;
+    border-color: $second-color $second-color $green-light $green-light;
+    animation-direction: reverse$green-light
   }
 }
+
+.Titre1 {
+  color :;
+}
+
 
    @keyframes l14{
    100%{transform: rotate(1turn)}
    }
 
-   .Titre1 {
-     color:#444;
-   }

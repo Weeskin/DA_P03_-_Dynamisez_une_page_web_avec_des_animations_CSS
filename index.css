@@ -47,6 +47,7 @@
   margin: 0;
   padding: 0;
   vertical-align: baseline;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -143,6 +144,33 @@ header .localisation {
 header .localisation i {
   padding-right: 17px;
   color: #353535;
+}
+
+/** Presentation Section **/
+.presentation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.presentation-section h1 {
+  text-align: center;
+  margin-left: 40px;
+  padding: 0 50px;
+}
+@media screen and (min-width: 1440px) {
+  .presentation-section h1 {
+    font-size: 40px;
+  }
+}
+.presentation-section p {
+  font-size: 18px;
+  text-align: center;
+  margin: 21px 0 0 0;
+}
+.presentation-section button {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=index.css.map */

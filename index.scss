@@ -10,6 +10,8 @@
   margin: 0;
   padding: 0;
   vertical-align: baseline;
+  font-family: "Roboto", sans-serif;
+
 }
 
 body{
@@ -107,5 +109,35 @@ header{
       padding-right: 17px;
       color : colors.$black-grey;
     }
+  }
+}
+
+
+/** Presentation Section **/
+.presentation-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  h1{
+    text-align: center;
+    margin-left:40px;
+    padding: 0 50px;
+    @media screen and (min-width:1440px) {
+      font-size: 40px;
+    }
+  }
+
+  p{
+    font-size: 18px;
+    text-align: center;
+    margin: 21px 0 0 0;
+  }
+
+  button{
+    display: inline-block;
+
   }
 }

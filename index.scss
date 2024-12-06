@@ -13,7 +13,6 @@
     align-items: center;
 }
 
-
 * {
     list-style: none;
     text-decoration: none;
@@ -331,6 +330,84 @@ header{
 
                 /** Animation du coeur **/
                 @include animations.card-heart-animation;
+            }
+        }
+    }
+}
+
+/** Footer **/
+footer {
+    @extend %flex-column;
+    background-color: colors.$black-grey;
+    color: colors.$white;
+    padding: 22px 25px 22px 25px;
+    margin-top: 60px;
+
+    @media screen and (min-width:767px) {
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        padding: 25px 30px 25px 30px;
+        margin-top: 30px;
+    }
+
+    h3 {
+        color: colors.$white;
+        font-family: "Shrikhand", cursive;
+        font-size: 18px;
+        margin: 0;
+
+        @media screen and (min-width:767px) {
+            margin-left: 16px;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @media screen and (min-width:767px) {
+            flex-direction: row;
+            justify-content: flex-end;
+            width: 100%;
+            margin: 30px 0 0 0;
+        }
+
+        li {
+            list-style-type: none;
+
+            @media screen and (min-width:767px) {
+                min-width: 11%;
+            }
+
+            a {
+                text-decoration: none;
+                color: colors.$white;
+            }
+        }
+
+        .ico-tools {
+            @media screen and (min-width:767px) {
+                min-width: 16%;
+
+            }
+
+            &::before {
+                content: "\f2e7";
+                padding-right: 10px;
+                font-size: 15px;
+            }
+        }
+
+        .ico-handshake-angle {
+            @media screen and (min-width:767px) {
+                min-width: 16%;
+            }
+
+            &::before {
+                content: "\f4c4";
+                padding-right: 10px;
+                font-size: 15px;
             }
         }
     }

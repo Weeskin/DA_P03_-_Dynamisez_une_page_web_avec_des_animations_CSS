@@ -1,143 +1,337 @@
 @use "_colors";
 @use "_keyframes";
+@use "_animations";
+
+%flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+%flex-column {
+    @extend %flex;
+    align-items: center;
+}
 
 
 * {
-  list-style: none;
-  text-decoration: none;
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-  font-family: "Roboto", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    font-family: "Roboto", sans-serif;
 
 }
 
 body{
-  background-color: colors.$background-color;
+    background-color: colors.$background-color;
 }
 
 h1,
 h2 {
-  font-family: "Roboto", sans-serif;
-  padding-left : 18px;
-  margin: 0;
-  @media screen and (min-width:1440px) {
-    padding: 0;
-  }
+    font-family: "Roboto", sans-serif;
+    padding-left : 18px;
+    margin: 0;
+    @media screen and (min-width:1440px) {
+        padding: 0;
+    }
 }
 
 /** Loader **/
 .loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background-color: colors.$white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeout 2700ms forwards;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: colors.$white;
+    @extend %flex;
+    animation: fadeout 2700ms forwards;
 
-  .wrapper {
-    width: 400px;
-    height: 120px;
-    position: relative;
-    z-index: 3;
+    .wrapper {
+        width: 400px;
+        height: 120px;
+        position: relative;
+        z-index: 3;
 
-    .circle {
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      border-radius: 50%;
-      background-color: colors.$first-color;
-      left: 15%;
-      transform-origin: 50%;
-      animation: circle_loader .5s alternate infinite ease;
+        .circle {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: colors.$first-color;
+            left: 15%;
+            transform-origin: 50%;
+            animation: circle_loader .5s alternate infinite ease;
+        }
+
+        .circle:nth-child(2) {
+            background-color: colors.$second-color;
+            left: 45%;
+            animation-delay: .2s;
+        }
+
+        .circle:nth-child(3) {
+            background-color: colors.$green-light;
+            left: auto;
+            right: 15%;
+            animation-delay: .3s;
+        }
     }
-
-    .circle:nth-child(2) {
-      background-color: colors.$second-color;
-      left: 45%;
-      animation-delay: .2s;
-    }
-
-    .circle:nth-child(3) {
-      background-color: colors.$green-light;
-      left: auto;
-      right: 15%;
-      animation-delay: .3s;
-    }
-  }
 }
 
 /** Header **/
 header{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100px;
-  .logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height : 63px;
-    background-color: colors.$white;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
-    z-index: 2;
-    img {
-      width: 162px;
-      height: auto;
+    @extend %flex;
+    height: 100px;
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height : 63px;
+        background-color: colors.$white;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+        z-index: 2;
+        img {
+            width: 162px;
+            height: auto;
+        }
     }
-  }
 
-  .localisation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 50px;
-    background-color: colors.$background-color-header;
-    color: colors.$black-grey;
-    font-family: "Roboto", sans-serif;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
-    i {
-      padding-right: 17px;
-      color : colors.$black-grey;
+    .localisation {
+        @extend %flex;
+        width: 100%;
+        height: 50px;
+        background-color: colors.$background-color-header;
+        color: colors.$black-grey;
+        font-family: "Roboto", sans-serif;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+        i {
+            padding-right: 17px;
+            color : colors.$black-grey;
+        }
     }
-  }
 }
 
-
 /** Presentation Section **/
+
 .presentation-section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+    @extend %flex;
+    width: 100%;
 
-  h1{
-    text-align: center;
-    margin-left:40px;
-    padding: 0 50px;
-    @media screen and (min-width:1440px) {
-      font-size: 40px;
+    h1{
+        text-align: center;
+        margin-left:40px;
+        padding: 0 50px;
+        @media screen and (min-width:1440px) {
+            font-size: 40px;
+        }
     }
-  }
 
-  p{
-    font-size: 18px;
-    text-align: center;
-    margin: 21px 0 0 0;
-  }
+    p{
+        font-size: 18px;
+        text-align: center;
+        margin: 21px 0 0 0;
+    }
 
-  button{
-    display: inline-block;
+    button{
+        display: inline-block;
+        margin: 31px 0 57px 0;
+        @include animations.btn-main;
 
-  }
+        &:hover{
+            @include animations.btn-main-hover;
+        }
+    }
+}
+
+/** Functioning Section **/
+.functioning-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width:1024px) {
+        padding: 50px 50px;
+        gap: 25px;
+    }
+
+    @media screen and (min-width:1440px) {
+        padding: 50px 180px;
+        gap: 25px;
+    }
+    .functioning-global {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-top: 30px;
+
+        @media screen and (min-width:1024px) {
+            flex-direction: row;
+            gap: 36px;
+            margin-top: 0;
+            justify-content: center;
+        }
+
+        .functioning-card {
+            width: 75%;
+            background-color: colors.$background-color;
+            border-radius: 20px;
+            padding: 28px 0 28px 34px;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+
+            @media screen and (min-width:1024px) {
+                min-width: 27%;
+            }
+
+            &::before {
+                display: inline-block;
+                position: absolute;
+                background-color: colors.$first-color;
+                color: colors.$white;
+                line-height: 24px;
+                font-size: 15px;
+                border-radius: 50%;
+                width: 24px;
+                text-align: center;
+                left: -12px;
+                content: "1";
+            }
+
+            &:nth-child(2)::before {
+                content: "2";
+            }
+
+            &:nth-child(3)::before {
+                content: "3";
+            }
+
+            /**  Icônes   **/
+            .icon::before {
+                padding-right: 20px;
+                color: colors.$medium-grey;
+            }
+
+            .mobile::before {
+                content: "\f3cd";
+                font-size: 20px;
+            }
+
+            .menu::before {
+                content: "\f0ca";
+                font-size: 15px;
+            }
+
+            .store::before {
+                content: "\f54e";
+                color: colors.$first-color;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+/** Restaurant Section **/
+.restaurant-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-top: 49px;
+
+    @media screen and (min-width:1440px) {
+        padding: 30px 180px;
+    }
+
+    h2 {
+        padding-bottom: 7px;
+    }
+
+    .restaurants-contents {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 18px 0 18px;
+        gap: 18px;
+
+        @media screen and (min-width:1024px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0;
+            gap: 25px 50px;
+        }
+
+        @media screen and (min-width:1440px) {
+            gap: 50px 100px;
+        }
+
+        .card {
+            width: 100%;
+            @include animations.cards;
+
+            @media screen and (min-width:1024px) {
+                width: 45%;
+            }
+
+            .card-first-section {
+                display: inline-block;
+                position: relative;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    max-height: 175px;
+                    border-radius: 15px 15px 0 0;
+                    object-fit: cover;
+                }
+
+                .label {
+                    width: 80px;
+                    height: 29px;
+                    border-radius: 2px;
+                    line-height: 29px;
+                    text-align: center;
+                    position: absolute;
+                    top: 13px;
+                    right: 12px;
+                    font-size: 14px;
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+                    background-color: colors.$green-light;
+                    color: colors.$color-label-font;
+                }
+            }
+
+            .card-second-section {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                color: colors.$black;
+                padding: 0 0 16px 16px;
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    color: colors.$black;
+                }
+
+                .card-title {
+                    margin: 16px 0 8px 0;
+                }
+
+                .card-subtitle {
+                    font-size: 17px;
+                    margin-top: 0;
+                }
+
+                /** Animation du coeur **/
+                @include animations.card-heart-animation;
+            }
+        }
+    }
 }

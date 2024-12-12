@@ -78,12 +78,6 @@
   src: url("../assets/fonts/FontAwesome/fa-brands-400.ttf") format("truetype"), url("../assets/fonts/FontAwesome/fa-brands-400.woff2") format("woff2");
 }
 /**    Général    **/
-footer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
 * {
   list-style: none;
   text-decoration: none;
@@ -351,6 +345,8 @@ main .anim_button {
 
 /** Footer **/
 footer {
+  display: flex;
+  flex-direction: column;
   background-color: #353535;
   color: white;
   padding: 22px 25px 22px 25px;

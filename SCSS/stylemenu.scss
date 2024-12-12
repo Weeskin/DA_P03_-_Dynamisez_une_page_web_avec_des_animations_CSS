@@ -4,19 +4,6 @@
 @use 'fonts.scss';
 
 /**    Général    **/
-
-%flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-%flex-column {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
 * {
     list-style: none;
     text-decoration: none;
@@ -300,7 +287,8 @@ main {
 
 /** Footer **/
 footer {
-    @extend %flex-column;
+    display: flex;
+    flex-direction: column;
     background-color: colors.$black-grey;
     color: colors.$white;
     padding: 22px 25px 22px 25px;

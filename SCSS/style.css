@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/** Animation Button **/
+/** Animations entrées - plats - desserts  **/
 @keyframes menu-content {
   from {
     opacity: 0;
@@ -40,18 +42,42 @@
     top: 0;
   }
 }
-/** Animation Button **/
-/** Animations entrées - plats - desserts  **/
-.presentation-section, header .localisation, header, .loader, footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/** FONTS Shrikhand **/
+@font-face {
+  src: url("../assets/fonts/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+  font-family: "Shrikhand", sans-serif;
 }
-
-footer {
-  align-items: center;
+/** FONTS Roboto **/
+@font-face {
+  src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
 }
-
+@font-face {
+  src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-family: "Roboto-bold", sans-serif;
+  font-weight: 700;
+}
+@font-face {
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-family: "Roboto-regular", sans-serif;
+  font-weight: 400;
+}
+@font-face {
+  src: url("../assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-family: "Roboto-light", sans-serif;
+  font-weight: 300;
+}
+/** FontAwesome **/
+@font-face {
+  font-family: "Font-Solid";
+  src: url("../assets/fonts/FontAwesome/fa-solid-900.ttf") format("truetype"), url("../assets/fonts/FontAwesome/fa-solid-900.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Font-Regular";
+  src: url("../assets/fonts/FontAwesome/fa-brands-400.ttf") format("truetype"), url("../assets/fonts/FontAwesome/fa-brands-400.woff2") format("woff2");
+}
+/**    Général    **/
 * {
   list-style: none;
   text-decoration: none;
@@ -60,7 +86,6 @@ footer {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
-  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -69,7 +94,7 @@ body {
 
 h1,
 h2 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto-bold", sans-serif;
   padding-left: 18px;
   margin: 0;
 }
@@ -82,6 +107,9 @@ h2 {
 
 /** Loader **/
 .loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -121,6 +149,9 @@ h2 {
 
 /** Header **/
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100px;
 }
 header .logo {
@@ -138,12 +169,14 @@ header .logo img {
   height: auto;
 }
 header .localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 50px;
   background-color: #EAEAEA;
   color: #353535;
   font-family: "Roboto", sans-serif;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 header .localisation i {
   padding-right: 17px;
@@ -152,12 +185,16 @@ header .localisation i {
 
 /** Presentation Section **/
 .presentation-section {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .presentation-section h1 {
+  font-family: "Roboto-bold", sans-serif;
   text-align: center;
-  margin-left: 40px;
-  padding: 0 50px;
+  margin: 40px 0 0 0;
+  padding: 0 50px 0 50px;
 }
 @media screen and (min-width: 1440px) {
   .presentation-section h1 {
@@ -165,11 +202,12 @@ header .localisation i {
   }
 }
 .presentation-section p {
+  font-family: "Roboto-light", sans-serif;
   font-size: 18px;
   text-align: center;
   margin: 21px 0 0 0;
 }
-.presentation-section button {
+.presentation-section .button {
   display: inline-block;
   margin: 31px 0 57px 0;
   border-radius: 25px;
@@ -182,7 +220,7 @@ header .localisation i {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: 300ms;
 }
-.presentation-section button:hover {
+.presentation-section .button:hover {
   opacity: 90%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
 }
@@ -191,7 +229,8 @@ header .localisation i {
 .functioning-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 48px 0 68px 10px;
+  background-color: white;
 }
 @media screen and (min-width: 1024px) {
   .functioning-section {
@@ -222,6 +261,7 @@ header .localisation i {
 }
 .functioning-section .functioning-global .functioning-card {
   width: 75%;
+  font-family: "Roboto", sans-serif;
   background-color: #F6F6F6;
   border-radius: 20px;
   padding: 28px 0 28px 34px;
@@ -253,6 +293,7 @@ header .localisation i {
   content: "3";
 }
 .functioning-section .functioning-global .functioning-card .icon::before {
+  font-family: "Font-Solid", sans-serif;
   padding-right: 20px;
   color: #7e7e7e;
 }
@@ -271,21 +312,21 @@ header .localisation i {
 }
 
 /** Restaurant Section **/
-.restaurant-section {
+.restaurants-section {
   display: flex;
   flex-direction: column;
   gap: 18px;
   padding-top: 49px;
 }
 @media screen and (min-width: 1440px) {
-  .restaurant-section {
+  .restaurants-section {
     padding: 30px 180px;
   }
 }
-.restaurant-section h2 {
+.restaurants-section h2 {
   padding-bottom: 7px;
 }
-.restaurant-section .restaurants-contents {
+.restaurants-section .restaurants-contents {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -293,7 +334,7 @@ header .localisation i {
   gap: 18px;
 }
 @media screen and (min-width: 1024px) {
-  .restaurant-section .restaurants-contents {
+  .restaurants-section .restaurants-contents {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
@@ -303,36 +344,37 @@ header .localisation i {
   }
 }
 @media screen and (min-width: 1440px) {
-  .restaurant-section .restaurants-contents {
+  .restaurants-section .restaurants-contents {
     gap: 50px 100px;
   }
 }
-.restaurant-section .restaurants-contents .card {
+.restaurants-section .restaurants-contents .card {
   width: 100%;
   background-color: white;
   border-radius: 15px 15px 15px 15px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 1024px) {
-  .restaurant-section .restaurants-contents .card {
+  .restaurants-section .restaurants-contents .card {
     width: 45%;
   }
 }
-.restaurant-section .restaurants-contents .card .card-first-section {
+.restaurants-section .restaurants-contents .card .card-first-section {
   display: inline-block;
   position: relative;
   width: 100%;
 }
-.restaurant-section .restaurants-contents .card .card-first-section img {
+.restaurants-section .restaurants-contents .card .card-first-section img {
   width: 100%;
   max-height: 175px;
   border-radius: 15px 15px 0 0;
   object-fit: cover;
 }
-.restaurant-section .restaurants-contents .card .card-first-section .label {
+.restaurants-section .restaurants-contents .card .card-first-section .label {
   width: 80px;
   height: 29px;
   border-radius: 2px;
+  font-family: "Roboto", sans-serif;
   line-height: 29px;
   text-align: center;
   position: absolute;
@@ -343,7 +385,7 @@ header .localisation i {
   background-color: #99E2D0;
   color: #008766;
 }
-.restaurant-section .restaurants-contents .card .card-second-section {
+.restaurants-section .restaurants-contents .card .card-second-section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -352,27 +394,29 @@ header .localisation i {
   position: relative;
   /** Animation du coeur **/
 }
-.restaurant-section .restaurants-contents .card .card-second-section a {
+.restaurants-section .restaurants-contents .card .card-second-section a {
   text-decoration: none;
   color: black;
 }
-.restaurant-section .restaurants-contents .card .card-second-section .card-title {
+.restaurants-section .restaurants-contents .card .card-second-section .card-title {
+  font-family: "Roboto-bold", sans-serif;
   margin: 16px 0 8px 0;
 }
-.restaurant-section .restaurants-contents .card .card-second-section .card-subtitle {
+.restaurants-section .restaurants-contents .card .card-second-section .card-subtitle {
+  font-family: "Roboto-light", sans-serif;
   font-size: 17px;
   margin-top: 0;
 }
-.restaurant-section .restaurants-contents .card .card-second-section .card-heart i {
+.restaurants-section .restaurants-contents .card .card-second-section .card-heart i {
   position: absolute;
   font-size: 20px;
   margin: 30px 10px 8px 0;
   right: 10%;
 }
-.restaurant-section .restaurants-contents .card .card-second-section .card-heart .fa-solid {
+.restaurants-section .restaurants-contents .card .card-second-section .card-heart .fa-solid {
   opacity: 0;
 }
-.restaurant-section .restaurants-contents .card .card-second-section .card-heart .fa-solid:hover {
+.restaurants-section .restaurants-contents .card .card-second-section .card-heart .fa-solid:hover {
   opacity: 1;
   color: transparent;
   background-clip: text;
@@ -384,6 +428,8 @@ header .localisation i {
 
 /** Footer **/
 footer {
+  display: flex;
+  flex-direction: column;
   background-color: #353535;
   color: white;
   padding: 22px 25px 22px 25px;
@@ -411,6 +457,7 @@ footer h3 {
 footer ul {
   display: flex;
   flex-direction: column;
+  font-family: "Roboto-light", sans-serif;
   gap: 8px;
 }
 @media screen and (min-width: 767px) {
@@ -433,6 +480,9 @@ footer ul li a {
   text-decoration: none;
   color: white;
 }
+footer ul .ico-tools {
+  font-family: "Roboto", sans-serif;
+}
 @media screen and (min-width: 767px) {
   footer ul .ico-tools {
     min-width: 16%;
@@ -440,8 +490,12 @@ footer ul li a {
 }
 footer ul .ico-tools::before {
   content: "\f2e7";
+  font-family: "Font-Solid", sans-serif;
   padding-right: 10px;
   font-size: 15px;
+}
+footer ul .ico-handshake-angle {
+  font-family: "Roboto", sans-serif;
 }
 @media screen and (min-width: 767px) {
   footer ul .ico-handshake-angle {
@@ -450,8 +504,9 @@ footer ul .ico-tools::before {
 }
 footer ul .ico-handshake-angle::before {
   content: "\f4c4";
+  font-family: "Font-Solid", sans-serif;
   padding-right: 10px;
   font-size: 15px;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=style.css.map */

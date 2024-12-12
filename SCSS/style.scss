@@ -1,18 +1,9 @@
-@use "_colors";
-@use "_keyframes";
-@use "_animations";
+@use 'colors.scss';
+@use 'animations.scss';
+@use 'keyframes.scss';
+@use 'fonts.scss';
 
-%flex{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-%flex-column {
-    @extend %flex;
-    align-items: center;
-}
-
+/**    Général    **/
 * {
     list-style: none;
     text-decoration: none;
@@ -21,8 +12,6 @@
     margin: 0;
     padding: 0;
     vertical-align: baseline;
-    font-family: "Roboto", sans-serif;
-
 }
 
 body{
@@ -31,7 +20,7 @@ body{
 
 h1,
 h2 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto-bold", sans-serif;
     padding-left : 18px;
     margin: 0;
     @media screen and (min-width:1440px) {
@@ -41,6 +30,9 @@ h2 {
 
 /** Loader **/
 .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -48,7 +40,6 @@ h2 {
     height: 100%;
     z-index: 2;
     background-color: colors.$white;
-    @extend %flex;
     animation: fadeout 2700ms forwards;
 
     .wrapper {
@@ -85,7 +76,9 @@ h2 {
 
 /** Header **/
 header{
-    @extend %flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100px;
     .logo{
         display: flex;
@@ -103,13 +96,15 @@ header{
     }
 
     .localisation {
-        @extend %flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         height: 50px;
         background-color: colors.$background-color-header;
         color: colors.$black-grey;
         font-family: "Roboto", sans-serif;
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+
         i {
             padding-right: 17px;
             color : colors.$black-grey;
@@ -120,25 +115,30 @@ header{
 /** Presentation Section **/
 
 .presentation-section{
-    @extend %flex;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h1{
+        font-family: "Roboto-bold", sans-serif;
         text-align: center;
-        margin-left:40px;
-        padding: 0 50px;
+        margin: 40px 0 0 0;
+        padding: 0 50px 0 50px;
+
         @media screen and (min-width:1440px) {
             font-size: 40px;
         }
     }
 
     p{
+        font-family: "Roboto-light", sans-serif;
         font-size: 18px;
         text-align: center;
         margin: 21px 0 0 0;
     }
 
-    button{
+    .button{
         display: inline-block;
         margin: 31px 0 57px 0;
         @include animations.btn-main;
@@ -153,7 +153,8 @@ header{
 .functioning-section{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 48px 0 68px 10px;
+    background-color: colors.$white;
     @media screen and (min-width:1024px) {
         padding: 50px 50px;
         gap: 25px;
@@ -179,6 +180,7 @@ header{
 
         .functioning-card {
             width: 75%;
+            font-family: "Roboto",sans-serif;
             background-color: colors.$background-color;
             border-radius: 20px;
             padding: 28px 0 28px 34px;
@@ -212,6 +214,7 @@ header{
 
             /**  Icônes   **/
             .icon::before {
+                font-family: "Font-Solid", sans-serif;
                 padding-right: 20px;
                 color: colors.$medium-grey;
             }
@@ -236,7 +239,7 @@ header{
 }
 
 /** Restaurant Section **/
-.restaurant-section {
+.restaurants-section{
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -294,6 +297,7 @@ header{
                     width: 80px;
                     height: 29px;
                     border-radius: 2px;
+                    font-family: "Roboto", sans-serif;
                     line-height: 29px;
                     text-align: center;
                     position: absolute;
@@ -320,10 +324,12 @@ header{
                 }
 
                 .card-title {
+                    font-family: "Roboto-bold", sans-serif;
                     margin: 16px 0 8px 0;
                 }
 
                 .card-subtitle {
+                    font-family: "Roboto-light", sans-serif;
                     font-size: 17px;
                     margin-top: 0;
                 }
@@ -337,7 +343,8 @@ header{
 
 /** Footer **/
 footer {
-    @extend %flex-column;
+    display: flex;
+    flex-direction: column;
     background-color: colors.$black-grey;
     color: colors.$white;
     padding: 22px 25px 22px 25px;
@@ -364,6 +371,7 @@ footer {
     ul {
         display: flex;
         flex-direction: column;
+        font-family: "Roboto-light", sans-serif;
         gap: 8px;
 
         @media screen and (min-width:767px) {
@@ -387,6 +395,7 @@ footer {
         }
 
         .ico-tools {
+            font-family: "Roboto", sans-serif;
             @media screen and (min-width:767px) {
                 min-width: 16%;
 
@@ -394,18 +403,21 @@ footer {
 
             &::before {
                 content: "\f2e7";
+                font-family: "Font-Solid", sans-serif;
                 padding-right: 10px;
                 font-size: 15px;
             }
         }
 
         .ico-handshake-angle {
+            font-family: "Roboto", sans-serif;
             @media screen and (min-width:767px) {
                 min-width: 16%;
             }
 
             &::before {
                 content: "\f4c4";
+                font-family: "Font-Solid", sans-serif;
                 padding-right: 10px;
                 font-size: 15px;
             }

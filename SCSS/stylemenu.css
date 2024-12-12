@@ -1,7 +1,4 @@
 @charset "UTF-8";
-@font {
-  src: local("../fonts");
-}
 /** Animation Button **/
 /** Animations entrées - plats - desserts  **/
 @keyframes menu-content {
@@ -45,15 +42,46 @@
     top: 0;
   }
 }
+/** FONTS Shrikhand **/
+@font-face {
+  src: url("../assets/fonts/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+  font-family: "Shrikhand", sans-serif;
+}
+/** FONTS Roboto **/
+@font-face {
+  src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+@font-face {
+  src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-family: "Roboto-bold", sans-serif;
+  font-weight: 700;
+}
+@font-face {
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-family: "Roboto-regular", sans-serif;
+  font-weight: 400;
+}
+@font-face {
+  src: url("../assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-family: "Roboto-light", sans-serif;
+  font-weight: 300;
+}
+/** FontAwesome **/
+@font-face {
+  font-family: "Font-Solid";
+  src: url("../assets/fonts/FontAwesome/fa-solid-900.ttf") format("truetype"), url("../assets/fonts/FontAwesome/fa-solid-900.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Font-Regular";
+  src: url("../assets/fonts/FontAwesome/fa-brands-400.ttf") format("truetype"), url("../assets/fonts/FontAwesome/fa-brands-400.woff2") format("woff2");
+}
 /**    Général    **/
 footer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-footer {
   align-items: center;
+  flex-direction: column;
 }
 
 * {
@@ -76,12 +104,14 @@ body {
 }
 
 h1 {
+  font-family: "Shrikhand", sans-serif;
   font-size: 28px;
-  margin: 32px 0px 0px 15px;
+  margin: 32px 0 0 15px;
   font-weight: 400;
 }
 
 h2 {
+  font-family: "Roboto-light", sans-serif;
   font-size: 16px;
   font-weight: lighter;
 }
@@ -95,6 +125,7 @@ h2::after {
 }
 
 h3 {
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
 }
 
@@ -116,7 +147,7 @@ header .logo {
 header .logo .link-back {
   position: relative;
   display: inline-block;
-  padding: 0px 23px 0px 23px;
+  padding: 0 23px 0 23px;
   text-decoration: none;
   color: #353535;
   z-index: 1;
@@ -249,6 +280,7 @@ main .menu .menu-content .card-list .card .text-content h3 {
   text-overflow: ellipsis;
 }
 main .menu .menu-content .card-list .card .text-content .description {
+  font-family: "Roboto-light", sans-serif;
   font-size: 15px;
   margin: 0;
   white-space: nowrap;
@@ -262,6 +294,7 @@ main .menu .menu-content .card-list .card .right-content {
 }
 main .menu .menu-content .card-list .card .right-content .price {
   color: #353535;
+  font-family: "Roboto-bold", sans-serif;
   font-size: 15px;
   margin: 0;
 }
@@ -345,7 +378,7 @@ footer h3 {
 footer ul {
   display: flex;
   flex-direction: column;
-  font-family: "Roboto-light";
+  font-family: "Roboto-light", sans-serif;
   gap: 8px;
 }
 @media screen and (min-width: 767px) {
@@ -369,7 +402,7 @@ footer ul li a {
   color: white;
 }
 footer ul .ico-tools {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 @media screen and (min-width: 767px) {
   footer ul .ico-tools {
@@ -378,12 +411,12 @@ footer ul .ico-tools {
 }
 footer ul .ico-tools::before {
   content: "\f2e7";
-  font-family: "Font-Solid";
+  font-family: "Font-Solid", sans-serif;
   padding-right: 10px;
   font-size: 15px;
 }
 footer ul .ico-handshake-angle {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 @media screen and (min-width: 767px) {
   footer ul .ico-handshake-angle {
@@ -391,7 +424,7 @@ footer ul .ico-handshake-angle {
   }
 }
 footer ul .ico-handshake-angle::before {
-  font-family: "Font-Solid";
+  font-family: "Font-Solid", sans-serif;
   content: "\f4c4";
   padding-right: 10px;
   font-size: 15px;

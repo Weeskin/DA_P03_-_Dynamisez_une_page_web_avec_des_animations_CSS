@@ -1,18 +1,20 @@
-@use "_colors";
-@use "_fonts";
-@use "_animations";
-@use "_keyframes";
+@use 'colors.scss';
+@use 'animations.scss';
+@use 'keyframes.scss';
+@use 'fonts.scss';
 
 /**    Général    **/
+
 %flex{
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
 %flex-column {
-    @extend %flex;
+    display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 * {
@@ -34,12 +36,14 @@ body {
 }
 
 h1 {
+    font-family: "Shrikhand", sans-serif;
     font-size: 28px;
-    margin: 32px 0px 0px 15px;
+    margin: 32px 0 0 15px;
     font-weight: 400;
 }
 
 h2 {
+    font-family: "Roboto-light", sans-serif;;
     font-size: 16px;
     font-weight: lighter;
 
@@ -54,6 +58,7 @@ h2 {
 }
 
 h3 {
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
 }
 
@@ -75,7 +80,7 @@ header {
         .link-back {
             position: relative;
             display: inline-block;
-            padding: 0px 23px 0px 23px;
+            padding: 0 23px 0 23px;
             text-decoration: none;
             color: colors.$black-grey;
             z-index: 1;
@@ -213,6 +218,7 @@ main {
                         }
 
                         .description {
+                            font-family: "Roboto-light", sans-serif;
                             font-size: 15px;
                             margin: 0;
                             white-space: nowrap;
@@ -228,6 +234,7 @@ main {
 
                         .price {
                             color: colors.$black-grey;
+                            font-family: "Roboto-bold", sans-serif;
                             font-size: 15px;
                             margin: 0;
                         }
@@ -320,7 +327,7 @@ footer {
     ul {
         display: flex;
         flex-direction: column;
-        font-family: "Roboto-light";
+        font-family: "Roboto-light",sans-serif;
         gap: 8px;
 
         @media screen and (min-width: 767px) {
@@ -344,7 +351,7 @@ footer {
         }
 
         .ico-tools {
-            font-family: "Roboto";
+            font-family: "Roboto", sans-serif;
 
             @media screen and (min-width: 767px) {
                 min-width: 16%;
@@ -353,21 +360,21 @@ footer {
 
             &::before {
                 content: "\f2e7";
-                font-family: "Font-Solid";
+                font-family: "Font-Solid", sans-serif;
                 padding-right: 10px;
                 font-size: 15px;
             }
         }
 
         .ico-handshake-angle {
-            font-family: "Roboto";
+            font-family: "Roboto", sans-serif;
 
             @media screen and (min-width: 767px) {
                 min-width: 16%;
             }
 
             &::before {
-                font-family: "Font-Solid";
+                font-family: "Font-Solid", sans-serif;
                 content: "\f4c4";
                 padding-right: 10px;
                 font-size: 15px;

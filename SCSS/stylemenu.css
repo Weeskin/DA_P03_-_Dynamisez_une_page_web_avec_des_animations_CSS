@@ -45,27 +45,27 @@
 /** FONTS Shrikhand **/
 @font-face {
   src: url("../assets/fonts/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
-  font-family: "Shrikhand", sans-serif;
+  font-family: "Shrikhand-Regular";
 }
 /** FONTS Roboto **/
 @font-face {
   src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
   font-weight: 500;
 }
 @font-face {
   src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
-  font-family: "Roboto-bold", sans-serif;
+  font-family: "Roboto-Bold";
   font-weight: 700;
 }
 @font-face {
   src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
-  font-family: "Roboto-regular", sans-serif;
+  font-family: "Roboto-Regular";
   font-weight: 400;
 }
 @font-face {
   src: url("../assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
-  font-family: "Roboto-light", sans-serif;
+  font-family: "Roboto-light";
   font-weight: 300;
 }
 /** FontAwesome **/
